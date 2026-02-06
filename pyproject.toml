@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "personal-tutor-site"
+version = "0.1.0"
+description = "Steve Hof — Math & Statistics Tutoring landing page (FastAPI + Jinja + HTMX + Tailwind)"
+authors = ["Steve Hof <stevenhof27@gmail.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+fastapi = "^0.115.0"
+uvicorn = {extras = ["standard"], version = "^0.35.0"}
+jinja2 = "^3.1.4"
+pydantic = {extras = ["email"], version = "^2.11.7"}
+python-dotenv = "^1.0.1"
+httpx = "^0.27.0"
+email-validator = "^2.2.0"
+python-multipart = "^0.0.20"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+ruff = "^0.5.0"
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","I","UP","B","Q"]
+ignore = []
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"

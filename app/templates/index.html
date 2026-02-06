@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block content %}
+  <!-- Hero -->
+  <section class="pt-12 sm:pt-16 lg:pt-20">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+          Math & Statistics Tutoring — clear, calm, and practical.
+        </h1>
+        <p class="mt-4 text-lg text-gray-700">
+          I’m Steve, a data scientist who teaches math & stats for real understanding. High school, university, and professional upskilling.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#contact" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border font-medium hover:bg-gray-100">Contact me</a>
+          <a href="#services" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 border font-medium hover:bg-gray-100">Services & Rates</a>
+        </div>
+        <ul class="mt-6 text-sm text-gray-600 list-disc list-inside">
+          <li>1:1 sessions (online or Victoria, BC)</li>
+          <li>Exam prep, assignments, research methods</li>
+          <li>R, Python, tidyverse, tidymodels, and more</li>
+          <li>UVic Courses: </li>
+          <li>STAT: 123, 191, 252, 254, 255, 256, 260, 261, 321, 350, 353, 359</li>
+          <li>PSYCH: 300A, 300B, SOC 231, MATH: 120, </li>
+          
+        </ul>
+      </div>
+      <div class="rounded-3xl border bg-white p-6 shadow-sm">
+        <div class="grid grid-cols-3 gap-4 text-center">
+          <div>
+            <div class="text-3xl font-semibold">150+ </div>
+            <div class="text-sm text-gray-600">students helped</div>
+          </div>
+          <div>
+            <div class="text-3xl font-semibold">9.6/10</div>
+            <div class="text-sm text-gray-600">avg. rating</div>
+          </div>
+          <div>
+            <div class="text-3xl font-semibold">7+ yrs</div>
+            <div class="text-sm text-gray-600">math stats csc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="mt-16">
+    <h2 class="text-2xl font-semibold">Services & Rates</h2>
+    <div class="mt-6 grid md:grid-cols-2 gap-6">
+      <div class="rounded-3xl border p-6 bg-white">
+        <h3 class="text-lg font-semibold">1:1 Tutoring</h3>
+        <p class="mt-2 text-gray-700">Math (algebra → calculus), statistics (intro → advanced), probability, and coursework help. Tools: R (tidyverse, tidymodels), Python.</p>
+        <p class="mt-3"><span class="font-medium">$80/hr</span> — package discounts available.</p>
+      </div>
+      <div class="rounded-3xl border p-6 bg-white">
+        <h3 class="text-lg font-semibold">Project & Code Support</h3>
+        <p class="mt-2 text-gray-700">Debugging, data wrangling, and model guidance; clean reporting and reproducible workflows.</p>
+        <p class="mt-3"><span class="font-medium">$100/hr</span> — billed in 15‑min increments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="mt-16">
+    <h2 class="text-2xl font-semibold">About Me</h2>
+    <p class="mt-4 text-gray-700 max-w-3xl">
+      I’m a coder and data scientist in Victoria, BC. I focus on clear explanations, building intuition, and practical problem‑solving. I work with high‑school, university, and professional learners.
+    </p>
+  </section>
+
+  <!-- Contact (HTMX partial response target) -->
+  <section id="contact" class="mt-16">
+    <h2 class="text-2xl font-semibold">Get in touch</h2>
+    <p class="mt-2 text-gray-700">Tell me what you’re working on and your timeline.</p>
+
+    <form class="mt-6 max-w-xl rounded-3xl border bg-white p-6"
+          hx-post="/contact" hx-target="#contact-response" hx-swap="innerHTML">
+      <label class="block text-sm font-medium">Name</label>
+      <input name="name" required class="mt-1 w-full rounded-xl border px-3 py-2" />
+
+      <label class="mt-4 block text-sm font-medium">Email</label>
+      <input type="email" name="email" required class="mt-1 w-full rounded-xl border px-3 py-2" />
+
+      <label class="mt-4 block text-sm font-medium">Message</label>
+      <textarea name="message" required rows="5" class="mt-1 w-full rounded-xl border px-3 py-2"></textarea>
+
+      <button type="submit" class="mt-6 inline-flex items-center justify-center rounded-2xl px-5 py-3 border font-medium hover:bg-gray-100">Send</button>
+
+      <div id="contact-response"></div>
+    </form>
+  </section>
+{% endblock %}

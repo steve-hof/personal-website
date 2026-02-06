@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steve Hof Tutoring — Math & Statistics (UVic Library)</title>
+  <meta name="description" content="Math & Statistics tutoring in Victoria, BC. Grade 10 to 3rd-year university. Meet at UVic Library. $70 / 55 mins." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --text:#eaf0ff;
+      --muted:#b7c3e6;
+      --accent:#7aa7ff;
+      --accent2:#6ef3c5;
+      --border:rgba(255,255,255,.12);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+      --font:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:var(--font);
+      background:
+        radial-gradient(1200px 600px at 12% 12%, rgba(122,167,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 85% 18%, rgba(110,243,197,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg), #060a14);
+      color:var(--text);
+      line-height:1.5;
+    }
+
+    a{color:inherit}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 18px 70px;
+    }
+
+    /* ---------- NAV ---------- */
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-bottom:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .logo{
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+    }
+
+    .navlinks{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .navlinks a{
+      text-decoration:none;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:999px;
+    }
+
+    .navlinks a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+    }
+
+    /* ---------- HERO ---------- */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+      margin-top:10px;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-left{
+      padding:26px 24px;
+    }
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+    }
+
+    .kdot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--accent2);
+    }
+
+    h1{
+      font-size:44px;
+      line-height:1.1;
+      margin:14px 0 10px;
+      letter-spacing:-.6px;
+    }
+
+    .sub{
+      color:var(--muted);
+      max-width:72ch;
+      font-size:16px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin:18px 0 6px;
+    }
+
+    .btn{
+      padding:11px 14px;
+      border-radius:12px;
+      font-weight:700;
+      text-decoration:none;
+      border:1px solid var(--border);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#0a1020;
+      border:none;
+    }
+
+    .btn-ghost{
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+    }
+
+    .mini{
+      margin-top:10px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section{
+      margin-top:22px;
+    }
+
+    .section-card{
+      padding:22px 18px;
+    }
+
+    .section-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .section-title h2{
+      margin:0;
+      font-size:22px;
+    }
+
+    .section-title p{
+      margin:0;
+      color:var(--muted);
+    }
+
+    .cols{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:12px;
+    }
+
+    .feat{
+      padding:16px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+
+    .feat h4{
+      margin:0 0 8px;
+    }
+
+    .feat p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+    }
+
+    footer{
+      margin-top:30px;
+      text-align:center;
+      font-size:13px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- NAV -->
+    <div class="nav">
+      <a class="brand" href="#">
+        <span class="logo"></span>
+        <span>Steve Hof Tutoring</span>
+      </a>
+      <div class="navlinks">
+        <a href="#details">Logistics</a>
+        <a href="#services">What I tutor</a>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card hero-left">
+        <span class="kicker"><span class="kdot"></span> Math & Statistics tutoring • Victoria, BC</span>
+        <h1>Clear explanations. Better grades. Less stress.</h1>
+        <p class="sub">
+          I tutor <strong>math and statistics</strong> from <strong>Grade 10</strong> through
+          <strong>3rd-year university</strong>. My focus is real understanding, not memorization —
+          so things actually stick.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#services">What I tutor</a>
+          <a class="btn btn-ghost" href="#details">Rates & policies</a>
+        </div>
+
+        <div class="mini">
+          <span class="pill">Meet at <strong>UVic Library</strong></span>
+          <span class="pill"><strong>$70</strong> / 55 mins</span>
+          <span class="pill">24-hour cancellation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGISTICS / CLEAR EXPECTATIONS -->
+    <section id="details" class="card section-card">
+      <div class="section-title">
+        <h2>Logistics, rate & policies</h2>
+        <p>Clear expectations</p>
+      </div>
+
+      <div class="cols">
+        <div class="feat">
+          <h4>Location</h4>
+          <p>I meet students in person at the <strong>UVic Library</strong>.</p>
+        </div>
+
+        <div class="feat">
+          <h4>Rate</h4>
+          <p><strong>$70</strong> for a <strong>55-minute</strong> session.</p>
+        </div>
+
+        <div class="feat">
+          <h4>Cancellation & payment</h4>
+          <p>
+            A minimum of <strong>24 hours notice</strong> is required to cancel.
+            Payment is due <strong>before or immediately after</strong> the session.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY STUDENTS DO WELL -->
+    <section class="card section-card">
+      <div class="section-title">
+        <h2>Why students do well working with me</h2>
+        <p>My approach, not just the material</p>
+      </div>
+
+      <div class="cols">
+        <div class="feat">
+          <h4>Patient, empathetic teaching</h4>
+          <p>
+            I know what it’s like to struggle. I teach patiently and without judgment,
+            creating a low-stress environment where students feel comfortable asking questions.
+          </p>
+        </div>
+
+        <div class="feat">
+          <h4>Deep experience with UVic courses</h4>
+          <p>
+            I’ve tutored hundreds of students and was a TA for every statistics course that uses one.
+            I understand what instructors expect and how students are evaluated.
+          </p>
+        </div>
+
+        <div class="feat">
+          <h4>Adaptive, intuitive explanations</h4>
+          <p>
+            I tailor my teaching style to each student, focusing on intuition and understanding —
+            not memorization or overly “mathy” explanations.
+          </p>
+        </div>
+
+        <div class="feat">
+          <h4>Consistent results</h4>
+          <p>
+            Students typically see meaningful improvements in confidence, grades,
+            and exam performance once things start to click.
+          </p>
+        </div>
+
+        <div class="feat">
+          <h4>I genuinely love tutoring</h4>
+          <p>
+            Teaching math and statistics is something I truly enjoy,
+            and that enthusiasm shows up in every session.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I TUTOR -->
+    <section id="services" class="card section-card">
+      <div class="section-title">
+        <h2>What I tutor</h2>
+        <p>Grade 10 → 3rd-year university</p>
+      </div>
+
+      <div class="cols">
+        <div class="feat">
+          <h4>High school math</h4>
+          <p>Foundations, Pre-Calculus, functions, trigonometry, algebra, exam prep.</p>
+        </div>
+
+        <div class="feat">
+          <h4>University math</h4>
+          <p>Calculus, limits, derivatives, integrals, optimization, sequences & series.</p>
+        </div>
+
+        <div class="feat">
+          <h4>Statistics</h4>
+          <p>Probability, distributions, confidence intervals, hypothesis testing, regression.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Steve Hof Tutoring • Victoria, BC
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
