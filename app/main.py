@@ -2,6 +2,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional
 
+from fastapi.responses import RedirectResponse
+from urllib.parse import urlencode
+
 from fastapi import FastAPI, Form, Request
 from fastapi.responses import FileResponse, HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -11,8 +14,12 @@ from pydantic import BaseModel, EmailStr
 from .emailer import send_contact_email
 from .schemas import ContactForm
 from .settings import settings
+from app.leads_db import init_db, insert_lead
 
 app = FastAPI(title=settings.project_name)
+@app.on_event("startup")
+async def _startup():
+    init_db()
 
 # Serve static assets (favicon, etc.)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
@@ -35,26 +42,8 @@ async def index():
 # ----------------------------
 # Contact form (HTML POST)
 # ----------------------------
-@app.post("/contact", response_class=HTMLResponse)
-async def contact(
-    request: Request,
-    name: str = Form(...),
-    email: str = Form(...),
-    message: str = Form(...),
-):
-    """
-    Handles a simple HTML contact form submission.
-    Expects form fields: name, email, message
-    """
-    data = ContactForm(name=name, email=email, message=message)
 
-    success = await send_contact_email(data.name, data.email, data.message)
 
-    # These template names assume you already have these files in app/templates/...
-    template = "partials/contact_success.html" if success else "components/flash.html"
-    context = {"request": request, "success": success, "name": data.name}
-
-    return templates.TemplateResponse(template, context)
 
 
 # ----------------------------
@@ -70,23 +59,46 @@ class Lead(BaseModel):
     source: Optional[str] = None
 
 
-@app.post("/api/lead")
-async def create_lead(lead: Lead):
-    """
-    Optional JSON endpoint if you want to submit the form via fetch()
-    instead of a normal HTML form POST.
-    """
-    message = (
-        "New tutoring request:\n\n"
-        f"Name: {lead.name}\n"
-        f"Email: {lead.email}\n"
-        f"Subject: {lead.subject}\n"
-        f"Grade level: {lead.grade_level}\n"
-        f"Notes: {lead.notes or ''}\n"
-        f"Submitted: {lead.submitted_at or ''}\n"
-        f"Source: {lead.source or ''}\n"
+@app.post("/contact")
+async def contact(
+    request: Request,
+    name: str = Form(...),
+    email: str = Form(...),
+    subject: str = Form(""),
+    course: str = Form(""),
+    message: str = Form(...),
+    website: str = Form(""),  # honeypot
+):
+    # spam trap
+    if website.strip():
+        return RedirectResponse(url="/?sent=1#contact", status_code=303)
+
+    full_message = (
+        f"New tutoring inquiry:\n\n"
+        f"Name: {name}\n"
+        f"Email: {email}\n"
+        f"Subject: {subject}\n"
+        f"Course: {course}\n\n"
+        f"Message:\n{message}\n"
     )
 
-    ok = await send_contact_email(lead.name, str(lead.email), message)
+    ok = await send_contact_email(name, email, full_message)
+    ip = request.client.host if request.client else None
+    ua = request.headers.get("user-agent")
 
-    return {"ok": ok, "received_at": datetime.utcnow().isoformat() + "Z"}
+    insert_lead(
+        name=name,
+        email=email,
+        subject=subject,
+        course=course,
+        message=message,
+        email_sent=ok,
+        ip=ip,
+        user_agent=ua,
+    )
+    return RedirectResponse(
+        url=f"/?sent={1 if ok else 0}#contact",
+        status_code=303,
+    )
+
+
