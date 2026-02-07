@@ -4,6 +4,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VS2SGFN126"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VS2SGFN126');
+</script>
   <title>Steve Hof Tutoring — Math & Statistics (UVic Library)</title>
   <meta name="description" content="Math & Statistics tutoring in Victoria, BC. Grade 10 to 3rd-year university. Meet at UVic Library. $70 / 55 mins." />
 
@@ -489,9 +498,8 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-</body>
 
-<script>
+  <script>
   // Footer year
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -505,9 +513,19 @@
       box.textContent = ok
         ? "Thanks — message sent! I’ll email you back shortly."
         : "Something went wrong sending that. Please try again or email me directly.";
+
+      // 🔥 GA4 EVENT
+      if (ok && typeof gtag === "function") {
+        gtag("event", "contact_form_submit", {
+          event_category: "engagement",
+          event_label: "contact_form",
+        });
+      }
     }
   }
 </script>
+
 </body>
 </html>
-</html>
+
+
