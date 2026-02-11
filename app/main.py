@@ -40,6 +40,16 @@ async def index():
 
 
 # ----------------------------
+# Stat 252 Landing page
+# ----------------------------
+@app.get("/stat-252")
+async def stat252():
+    return FileResponse(Path("app/static/stat-252.html"))
+
+
+
+
+# ----------------------------
 # Contact form (HTML POST)
 # ----------------------------
 
