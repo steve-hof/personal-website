@@ -42,9 +42,9 @@ async def index():
 # ----------------------------
 # Stat 252 Landing page
 # ----------------------------
-@app.get("/stat-252")
-async def stat252():
-    return FileResponse(Path("app/static/stat-252.html"))
+@app.get("/stat-252-tutor-uvic")
+async def stat252_tutor_uvic():
+    return FileResponse(Path("app/static/stat-252-tutor-uvic.html"))
 
 
 
