@@ -42,11 +42,22 @@ async def index():
 # ----------------------------
 # Stat 252 Landing page
 # ----------------------------
+
+
+@app.get("/stat-252")
+async def stat_252_redirect():
+    return RedirectResponse(url="/stat-252-tutor-uvic", status_code=301)
+
 @app.get("/stat-252-tutor-uvic")
 async def stat252_tutor_uvic():
     return FileResponse(Path("app/static/stat-252-tutor-uvic.html"))
 
-
+# ----------------------------
+# Math 151 Landing page
+# ----------------------------
+@app.get("/math-151-tutor-uvic")
+async def math_151_tutor_uvic():
+    return FileResponse(Path("app/static/math-151-tutor-uvic.html"))
 
 
 # ----------------------------
