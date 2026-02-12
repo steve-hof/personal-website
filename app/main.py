@@ -61,6 +61,13 @@ async def math_151_tutor_uvic():
 
 
 # ----------------------------
+# Psych 300 Landing Page
+# ----------------------------
+@app.get("/psych-300-statistics-tutor-uvic")
+async def psych_300_statistics_tutor_uvic():
+    return FileResponse(Path("app/static/psych-300-statistics-tutor-uvic.html"))
+
+# ----------------------------
 # Contact form (HTML POST)
 # ----------------------------
 
