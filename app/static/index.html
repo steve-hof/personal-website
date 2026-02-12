@@ -336,6 +336,47 @@
 }
 .hp{ position:absolute; left:-9999px; top:-9999px; }
 
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+}
+
+@media (max-width: 900px){
+  .cards{ grid-template-columns: 1fr; }
+}
+
+.mini-card{
+  display:block;
+  text-decoration:none;
+  border:1px solid var(--border);
+  background:rgba(15,26,51,.72);
+  border-radius:var(--radius);
+  padding:16px 16px;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.mini-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(122,167,255,.45);
+  background: rgba(15,26,51,.85);
+}
+
+.mini-card h3{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.mini-card p{
+  margin:0 0 10px;
+  color: var(--muted);
+}
+
+.mini-link{
+  color: var(--text);
+  font-weight: 700;
+}
+
   </style>
 </head>
 
@@ -576,6 +617,35 @@
     I meet students in person at the <strong>UVic Library</strong>. Online sessions are also available.
   </p>
 </section>
+
+<!-- POPULAR COURSES -->
+<section class="card section-card" id="popular-courses">
+  <div class="section-title">
+    <h2>Popular courses</h2>
+    <p>Quick links for the most common UVic courses I help with</p>
+  </div>
+
+  <div class="cards">
+    <a class="mini-card" href="/stat-252-tutor-uvic">
+      <h3>STAT 252</h3>
+      <p>Probability, distributions, confidence intervals, hypothesis tests.</p>
+      <span class="mini-link">View STAT 252 page →</span>
+    </a>
+
+    <a class="mini-card" href="/math-151-tutor-uvic">
+      <h3>MATH 151</h3>
+      <p>Limits, derivatives, applications, integrals, exam prep.</p>
+      <span class="mini-link">View MATH 151 page →</span>
+    </a>
+
+    <a class="mini-card" href="/psych-300-statistics-tutor-uvic">
+      <h3>PSYC 300 (Statistics)</h3>
+      <p>Choosing tests, p-values, interpretation, reports, confidence intervals.</p>
+      <span class="mini-link">View PSYC 300 page →</span>
+    </a>
+  </div>
+</section>
+
 
     <!-- CONTACT -->
 <section id="contact" class="card section-card">
