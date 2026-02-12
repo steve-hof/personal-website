@@ -377,6 +377,55 @@
   font-weight: 700;
 }
 
+footer{
+  margin-top:40px;
+  padding:30px 20px 20px;
+  border-top:1px solid var(--border);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+  margin-bottom:20px;
+}
+
+@media (max-width:900px){
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+footer h4{
+  margin:0 0 10px;
+  font-size:16px;
+}
+
+.footer-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-links li{
+  margin-bottom:6px;
+}
+
+.footer-links a{
+  color: var(--muted);
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color: var(--text);
+}
+
+.footer-bottom{
+  margin-top:20px;
+  font-size:14px;
+  color: var(--muted);
+}
+
   </style>
 </head>
 
@@ -734,9 +783,38 @@
     Want to leave a quick review? It really helps parents and students find me locally.
   </p>
 </section>
-    <footer>
-      © <span id="year"></span> Steve Hof Tutoring • Victoria, BC
-    </footer>
+
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <h4>Popular UVic Courses</h4>
+      <ul class="footer-links">
+        <li><a href="/stat-252-tutor-uvic">STAT 252 Tutor (UVic)</a></li>
+        <li><a href="/math-151-tutor-uvic">MATH 151 Tutor (UVic)</a></li>
+        <li><a href="/psych-300-statistics-tutor-uvic">PSYC 300 Statistics Tutor</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Location</h4>
+      <p>Victoria, BC<br>Meet at UVic Library</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p><a href="#contact">Book a Session</a></p>
+      <p><a href="mailto:steven.hof@icloud.com">steven.hof@icloud.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Steve Hof Tutoring • Victoria, BC
+  </div>
+</footer>
+
+
   </div>
 
   <script>
