@@ -1,7 +1,7 @@
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
-
+from fastapi import Response
 from fastapi.responses import RedirectResponse
 from urllib.parse import urlencode
 
@@ -38,10 +38,14 @@ async def index():
     index_path = Path("app/static/index.html")
     return FileResponse(index_path)
 
+@app.head("/")
+async def head_root():
+    return Response(status_code=200)
 
 # ----------------------------
 # Stat 252 Landing page
 # ----------------------------
+
 
 
 @app.get("/stat-252")
@@ -52,6 +56,10 @@ async def stat_252_redirect():
 async def stat252_tutor_uvic():
     return FileResponse(Path("app/static/stat-252-tutor-uvic.html"))
 
+@app.head("/stat-252-tutor-uvic")
+async def head_stat252():
+    return Response(status_code=200)
+
 # ----------------------------
 # Math 151 Landing page
 # ----------------------------
@@ -60,12 +68,21 @@ async def math_151_tutor_uvic():
     return FileResponse(Path("app/static/math-151-tutor-uvic.html"))
 
 
+@app.head("/math-151-tutor-uvic")
+async def head_math151():
+    return Response(status_code=200)
 # ----------------------------
 # Psych 300 Landing Page
 # ----------------------------
 @app.get("/psych-300-statistics-tutor-uvic")
 async def psych_300_statistics_tutor_uvic():
     return FileResponse(Path("app/static/psych-300-statistics-tutor-uvic.html"))
+
+
+@app.head("/psych-300-statistics-tutor-uvic")
+async def head_psych300():
+    return Response(status_code=200)
+
 
 # ----------------------------
 # Contact form (HTML POST)
