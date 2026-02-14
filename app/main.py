@@ -42,6 +42,26 @@ async def index():
 async def head_root():
     return Response(status_code=200)
 
+
+from fastapi import HTTPException
+
+@app.get("/{page_name}", response_class=HTMLResponse)
+async def static_page(page_name: str):
+    """
+    Serves static HTML pages from app/static.
+    Allows /high-school-math-tutor-victoria to load high-school-math-tutor-victoria.html
+    """
+    # allow both /foo and /foo.html
+    candidates = [
+        Path("app/static") / f"{page_name}.html",
+        Path("app/static") / page_name,
+    ]
+
+    for p in candidates:
+        if p.exists() and p.is_file():
+            return FileResponse(p)
+
+    raise HTTPException(status_code=404, detail="Not Found")
 # ----------------------------
 # Stat 252 Landing page
 # ----------------------------
