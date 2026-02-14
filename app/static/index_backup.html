@@ -1,11 +1,47 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Steve Hof Tutoring — Math & Statistics (UVic Library)</title>
-  <meta name="description" content="Math & Statistics tutoring in Victoria, BC. Grade 10 to 3rd-year university. Meet at UVic Library. $70 / 55 mins." />
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VS2SGFN126"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-VS2SGFN126');
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://www.stevehof.com/#business",
+  "name": "Steve Hof Tutoring",
+  "url": "https://www.stevehof.com",
+  "telephone": "+1-250-686-6262",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Victoria",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Greater Victoria"
+  },
+  "sameAs": [
+    "https://www.google.com/maps/place/?q=place_id:ChIJZb3hK1xjBGcR8K5jCqfP6EU"
+  ]
+}
+</script>
+
+
+</script>
+<title>STAT 252 Tutor (UVic) | Statistics Tutoring in Victoria BC — Steve Hof</title>
+<meta name="description"
+      content="Statistics tutoring in Victoria, BC — specializing in all UVic STATs courses, PSYC 300 (statistics), and MATH 151. In-person at UVic Library or online. Clear, patient support for anxious or overwhelmed students." />
   <style>
     :root{
       --bg:#0b1220;
@@ -83,6 +119,35 @@
       background:rgba(255,255,255,.06);
     }
 
+
+    /* Reviews */
+.reviews-actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin: 14px 0 14px;
+}
+
+.map-embed{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+}
+
+.map-embed iframe{
+  width:100%;
+  height:420px;
+  border:0;
+  display:block;
+}
+
+.reviews-note{
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
     /* ---------- HERO ---------- */
     .hero{
       display:grid;
@@ -235,6 +300,150 @@
       font-size:13px;
       color:var(--muted);
     }
+
+
+<!-- INTERNAL LINKS -->
+<div class="card" style="margin-top:14px;">
+  <h2>Other tutoring I do</h2>
+  <p class="muted" style="margin-top:6px;">
+    Most of my students are in statistics — but I also help with these courses / levels:
+  </p>
+
+  <ul class="list" style="margin-top:10px;">
+    <li><a href="/stat-252-tutor-uvic">STAT 252 tutoring (UVic)</a></li>
+    <li><a href="/psych-300-statistics-tutor-uvic">PSYCH 300 / statistics tutoring (UVic)</a></li>
+    <li><a href="/math-151-tutor-uvic">MATH 151 / finite math tutoring (UVic)</a></li>
+    <li><a href="/high-school-math-tutor-victoria">High school math tutoring (Grades 10–12)</a></li>
+    <li><a href="/#contact">General tutoring contact page</a></li>
+  </ul>
+</div>
+
+
+    /* ---------- CONTACT ---------- */
+.contact-form{ margin-top:14px; }
+.grid-2{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:12px;
+}
+.field label{
+  display:block;
+  font-size:13px;
+  color:var(--muted);
+  margin:0 0 6px;
+}
+.field input, .field textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  color:var(--text);
+  outline:none;
+}
+.field input:focus, .field textarea:focus{
+  border-color:rgba(122,167,255,.65);
+}
+.flash{
+  margin-top:12px;
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.04);
+  color:var(--text);
+}
+.hp{ position:absolute; left:-9999px; top:-9999px; }
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:14px;
+}
+
+@media (max-width: 900px){
+  .cards{ grid-template-columns: 1fr; }
+}
+
+.mini-card{
+  display:block;
+  text-decoration:none;
+  border:1px solid var(--border);
+  background:rgba(15,26,51,.72);
+  border-radius:var(--radius);
+  padding:16px 16px;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease;
+}
+
+.mini-card:hover{
+  transform: translateY(-2px);
+  border-color: rgba(122,167,255,.45);
+  background: rgba(15,26,51,.85);
+}
+
+.mini-card h3{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.mini-card p{
+  margin:0 0 10px;
+  color: var(--muted);
+}
+
+.mini-link{
+  color: var(--text);
+  font-weight: 700;
+}
+
+footer{
+  margin-top:40px;
+  padding:30px 20px 20px;
+  border-top:1px solid var(--border);
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+  margin-bottom:20px;
+}
+
+@media (max-width:900px){
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+footer h4{
+  margin:0 0 10px;
+  font-size:16px;
+}
+
+.footer-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.footer-links li{
+  margin-bottom:6px;
+}
+
+.footer-links a{
+  color: var(--muted);
+  text-decoration:none;
+}
+
+.footer-links a:hover{
+  color: var(--text);
+}
+
+.footer-bottom{
+  margin-top:20px;
+  font-size:14px;
+  color: var(--muted);
+}
+
   </style>
 </head>
 
@@ -249,8 +458,12 @@
       <div class="navlinks">
         <a href="#details">Logistics</a>
         <a href="#services">What I tutor</a>
+        <a href="#contact">Contact</a>
       </div>
     </div>
+
+<a class="btn btn-primary" href="#statistics">Statistics tutoring</a>
+<a class="btn" href="#contact">Contact</a>
 
     <!-- HERO -->
     <div class="hero">
@@ -259,8 +472,10 @@
         <h1>Clear explanations. Better grades. Less stress.</h1>
         <p class="sub">
           I tutor <strong>math and statistics</strong> from <strong>Grade 10</strong> through
-          <strong>3rd-year university</strong>. My focus is real understanding, not memorization —
-          so things actually stick.
+          <strong>University</strong>
+        </p> 
+        <p class="sub">
+        My focus is real understanding, not memorization — so things actually stick.
         </p>
 
         <div class="cta-row">
@@ -279,8 +494,8 @@
     <!-- WHY STUDENTS DO WELL -->
     <section class="card section-card">
       <div class="section-title">
-        <h2>Why students do well working with me</h2>
-        <p>My approach, not just the material</p>
+        <h2>Why choose me?</h2>
+        <p><strong>Special experience working with ADHD</strong></p>
       </div>
 
       <div class="cols">
@@ -330,7 +545,7 @@
     <section id="services" class="card section-card">
       <div class="section-title">
         <h2>What I tutor</h2>
-        <p>Grade 10 → 3rd-year university</p>
+        <p>Grade 10 → Undergraduate</p>
       </div>
 
       <div class="cols">
@@ -394,14 +609,263 @@
         </div>
       </div>
     </section>
+   
+<!-- STATISTICS (PRIMARY) -->
+<section id="statistics" class="card section-card">
+  <div class="section-title">
+    <h2>Statistics tutoring (my specialty)</h2>
+    <p>Clear, structured support for university stats — especially UVic courses</p>
+  </div>
 
-    <footer>
-      © <span id="year"></span> Steve Hof Tutoring • Victoria, BC
-    </footer>
+  <p>
+    If you’re stuck in a statistics course, you’re not alone — and you don’t need to “be a math person”
+    to do well. <strong>Statistics is the main thing I tutor</strong>, and it’s what I tutor best.
+  </p>
+
+  <p>
+    I work with students step-by-step on concepts, assignments, and exam-style questions.
+    Sessions are organized and paced carefully — helpful for students who feel overwhelmed,
+    anxious, or have ADHD.
+  </p>
+
+  <div class="grid-2">
+    <div class="feat">
+      <h4>Most common courses</h4>
+      <ul>
+        <li><strong>STAT 252</strong> (UVic)</li>
+        <li><strong>PSYC 300</strong> (statistics)</li>
+        <li><strong>MATH 151</strong></li>
+      </ul>
+    </div>
+
+    <div class="feat">
+      <h4>Common topics</h4>
+      <ul>
+        <li>Probability, random variables, distributions</li>
+        <li>Confidence intervals & hypothesis tests</li>
+        <li>Regression & correlation</li>
+        <li>Interpreting output and writing conclusions</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    I meet students <strong>in person at the UVic Library</strong> (Victoria, BC), and online sessions
+    are available when needed.
+  </p>
+</section>
+
+<!-- FAQ (SEO) -->
+<section id="faq" class="card section-card">
+  <div class="section-title">
+    <h2>FAQ</h2>
+  </div>
+
+  <h4>Do you tutor STAT 252 at UVic?</h4>
+  <p>
+    Yes — STAT 252 is one of the most common courses I tutor. We’ll focus on the specific types of
+    questions that show up on assignments and exams (probability, distributions, and inference).
+  </p>
+
+  <h4>Is PSYC 300 a statistics course?</h4>
+  <p>
+    Yes. PSYC 300 is essentially an applied statistics course. I help students understand the core ideas
+    (tests, interpretation, reporting) and work through practice problems until the steps feel natural.
+  </p>
+
+  <h4>Can you help even if I’m behind or panicking before an exam?</h4>
+  <p>
+    Yes! This is one of my specialties!  We’ll prioritize the highest-impact topics, build a simple plan, and work through representative
+    exam questions so you know exactly what to do under time pressure.
+  </p>
+
+  <h4>Where do sessions take place?</h4>
+  <p>
+    I meet students in person at the <strong>UVic Library</strong>. Online sessions are also available via Zoom.
+  </p>
+</section>
+
+<!-- POPULAR COURSES -->
+<section class="card section-card" id="popular-courses">
+  <div class="section-title">
+    <h2>Popular courses</h2>
+    <p>Quick links for the most common UVic courses I help with</p>
+  </div>
+
+  <div class="cards">
+    <a class="mini-card" href="/stat-252-tutor-uvic">
+      <h3>STAT 252</h3>
+      <p>Probability, distributions, confidence intervals, hypothesis tests.</p>
+      <span class="mini-link">View STAT 252 page →</span>
+    </a>
+
+    <a class="mini-card" href="/math-151-tutor-uvic">
+      <h3>MATH 151</h3>
+      <p>Counting, probability, matrixes, Markov chains, exam prep.</p>
+      <span class="mini-link">View MATH 151 page →</span>
+    </a>
+
+    <a class="mini-card" href="/psych-300-statistics-tutor-uvic">
+      <h3>PSYC 300 (Statistics)</h3>
+      <p>Choosing tests, p-values, interpretation, reports, power.</p>
+      <span class="mini-link">View PSYC 300 page →</span>
+    </a>
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
+<section id="contact" class="card section-card">
+  <div class="section-title">
+    <h2>Contact</h2>
+    <p>Send me a quick note and I’ll reply by email</p>
+  </div>
+
+  <div id="contact-status" class="flash" style="display:none;"></div>
+
+  <form class="contact-form" action="/contact" method="post">
+    <!-- Honeypot (spam trap): should stay empty -->
+    <input type="text" name="website" autocomplete="off" tabindex="-1" class="hp" />
+
+    <div class="grid-2">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" placeholder="Math / Stats / Econ / Other" />
+      </div>
+
+      <div class="field">
+        <label for="course">Course (optional)</label>
+        <input id="course" name="course" type="text" placeholder="e.g., STAT 255, MATH 101" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required
+        placeholder="Tell me what you're working on, your timeline, and a couple times you're free."></textarea>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Send message</button>
+  </form>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="card section-card">
+  <div class="section-title">
+    <h2>Google reviews</h2>
+    <p>See what students and parents are saying</p>
+  </div>
+
+<div class="reviews-actions">
+  <a
+    class="btn btn-primary"
+    href="https://share.google/azBVxv2OPAmmzUX1w"
+    target="_blank"
+    rel="noopener"
+  >
+    Read reviews
+  </a>
+
+  <a
+    class="btn"
+    href="https://g.page/r/CQAQCCGTwojTEBM/review"
+    target="_blank"
+    rel="noopener"
+  >
+    Leave a review
+  </a>
+</div>
+
+  <div class="map-embed">
+	  <iframe
+  title="Steve Hof Tutoring on Google Maps"
+  src="https://www.google.com/maps?q=place_id:ChIJZb3hK1xjBGcR8K5jCqfP6EU&output=embed"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>
+  </div>
+
+  <p class="reviews-note">
+    Want to leave a quick review? It really helps parents and students find me locally.
+  </p>
+</section>
+
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <h4>Popular UVic Courses</h4>
+      <ul class="footer-links">
+        <li><a href="/stat-252-tutor-uvic">STAT 252 Tutor (UVic)</a></li>
+        <li><a href="/math-151-tutor-uvic">MATH 151 Tutor (UVic)</a></li>
+        <li><a href="/psych-300-statistics-tutor-uvic">PSYC 300 Statistics Tutor</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Location</h4>
+      <p>Victoria, BC<br>Meet at UVic Library</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p><a href="#contact">Book a Session</a></p>
+      <p><a href="mailto:steven.hof@icloud.com">steven.hof@icloud.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <span id="year"></span> Steve Hof Tutoring • Victoria, BC
+  </div>
+</footer>
+
+
   </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <script>
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Show contact success/fail message after redirect
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("sent")) {
+    const box = document.getElementById("contact-status");
+    if (box) {
+      const ok = params.get("sent") === "1";
+      box.style.display = "block";
+      box.textContent = ok
+        ? "Thanks — message sent! I’ll email you back shortly."
+        : "Something went wrong sending that. Please try again or email me directly.";
+
+      // 🔥 GA4 EVENT
+      if (ok && typeof gtag === "function") {
+        gtag("event", "contact_form_submit", {
+          event_category: "engagement",
+          event_label: "contact_form",
+        });
+      }
+    }
+  }
+</script>
+
 </body>
 </html>
+
+
