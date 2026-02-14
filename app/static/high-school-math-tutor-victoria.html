@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>High School Math Tutor (Grades 10–12) — Steve Hof | Victoria BC</title>
+  <meta name="description" content="High school math tutoring in Victoria, BC (Grades 10, 11, 12). Algebra, functions, precalculus, exam prep. Meet at UVic Library. $70 / 55 minutes." />
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS2SGFN126"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VS2SGFN126');
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1a33; --text:#eaf0ff; --muted:#b7c3e6;
+      --accent:#7aa7ff; --accent2:#6ef3c5; --border:rgba(255,255,255,.12);
+      --shadow:0 18px 50px rgba(0,0,0,.35); --radius:18px; --max:980px;
+      --font:ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:var(--font); color:var(--text); line-height:1.5;
+      background:
+        radial-gradient(1200px 600px at 12% 12%, rgba(122,167,255,.25), transparent 60%),
+        radial-gradient(900px 500px at 85% 18%, rgba(110,243,197,.18), transparent 55%),
+        linear-gradient(180deg, var(--bg), #060a14);
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 40px;}
+    .topbar{display:flex; justify-content:space-between; margin-bottom:22px;}
+    .pill{border:1px solid var(--border); background:rgba(255,255,255,.04);
+      padding:10px 12px; border-radius:999px; color:var(--muted);}
+    .hero{
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow:var(--shadow); border-radius:var(--radius); padding:26px 22px;
+    }
+    h1{margin:0 0 10px; font-size:34px;}
+    .sub{color:var(--muted); margin-bottom:16px;}
+    .btn{
+      padding:12px 14px; border-radius:12px; font-weight:700;
+      display:inline-flex; align-items:center; justify-content:center;
+      border:none; cursor:pointer;
+    }
+    .btn-primary{background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#07111f;}
+    .card{
+      border:1px solid var(--border);
+      background:rgba(15,26,51,.72);
+      border-radius:var(--radius);
+      padding:18px 16px; margin-top:14px;
+    }
+    label{display:block; font-size:13px; color:var(--muted); margin:0 0 6px;}
+    input, textarea{
+      width:100%; border-radius:12px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04); color:var(--text); padding:11px 12px;
+    }
+    footer{color:var(--muted); text-align:center; margin-top:22px; font-size:13px;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <div class="topbar">
+      <div><strong>Steve Hof Tutoring</strong></div>
+      <a class="pill" href="/">Back to main site</a>
+    </div>
+
+    <section class="hero">
+      <div class="pill">📍 Meet at UVic Library • Victoria, BC</div>
+      <div class="pill">⭐ 5.0 Google rating</div>
+      <div class="pill">💵 $70 / 55 minutes</div>
+
+      <h1>High School Math Tutor (Grades 10–12)</h1>
+      <p class="sub">
+        Clear explanations. Step-by-step structure. Confidence before exams.
+        I help students understand math instead of memorizing it.
+      </p>
+
+      <a class="btn btn-primary" href="#contact">Book a session</a>
+
+      <div class="card">
+        <h2>What I help with</h2>
+        <ul>
+          <li>Algebra & linear equations</li>
+          <li>Functions & graphing</li>
+          <li>Quadratics & polynomials</li>
+          <li>Trigonometry</li>
+          <li>Pre-calculus</li>
+          <li>Final exam preparation</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Why students improve quickly</h2>
+        <ul>
+          <li>We build a repeatable problem-solving method</li>
+          <li>I simplify concepts without dumbing them down</li>
+          <li>I specialize in statistics and structured thinking</li>
+          <li>Calm, supportive environment (great for anxious students)</li>
+        </ul>
+      </div>
+
+      <!-- CONTACT -->
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p class="sub">Parents welcome to reach out directly.</p>
+
+        <form action="/contact" method="post" id="contact_form">
+          <input type="hidden" name="subject" value="High School Math Tutoring" />
+          <input type="hidden" name="course" value="High School Math" />
+
+          <label>Name</label>
+          <input name="name" required />
+
+          <label>Email</label>
+          <input name="email" type="email" required />
+
+          <label>Message</label>
+          <textarea name="message" rows="5" required
+            placeholder="Grade level? School? Topics? Exam date?"></textarea>
+
+          <br><br>
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+      </section>
+
+    </section>
+
+    <footer>© <span id="year"></span> Steve Hof Tutoring • Victoria, BC</footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const form = document.getElementById("contact_form");
+    if (form) {
+      form.addEventListener("submit", () => {
+        try { gtag('event', 'contact_submit', { page: '/high-school-math-tutor-victoria' }); } catch(e){}
+      });
+    }
+  </script>
+</body>
+</html>
