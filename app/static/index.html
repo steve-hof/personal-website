@@ -99,6 +99,33 @@
 
     *{box-sizing:border-box}
 
+    /* TRUST STRIP */
+    .trust-strip {
+      background: rgba(255,255,255,.04);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 1rem;
+    }
+
+    .trust-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .trust-item {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .trust-item strong {
+      color: var(--text);
+    }
+
     body{
       margin:0;
       font-family:var(--font);
@@ -442,6 +469,27 @@
             A minimum of <strong>24 hours notice</strong> is required to cancel.
             Payment is due <strong>before or immediately after</strong> the session.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip">
+      <div class="trust-wrap">
+        <div class="trust-item">
+          ⭐⭐⭐⭐⭐ <strong>5-Star Rated</strong>
+        </div>
+
+        <div class="trust-item">
+          📍 In-Person at <strong>UVic Library</strong>
+        </div>
+
+        <div class="trust-item">
+          💲 <strong>$70</strong> / 55-minute session
+        </div>
+
+        <div class="trust-item">
+          📊 Specializing in <strong>Statistics</strong>
         </div>
       </div>
     </section>
